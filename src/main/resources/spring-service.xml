@@ -8,4 +8,17 @@
     <!--开启注解扫描-->
     <context:component-scan base-package="com.chenshijie.service"/>
 
+    <!--将所有的业务类，注入到Spring，可以通过配置，也可以通过注解-->
+    <!--只有所有的配置文件都在同一个applicationContext下（同一个上下文）才能完成-->
+    <bean id="StudentServiceImpl" class="com.chenshijie.service.StudentServiceImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+
+    <!--声明式事务配置-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
 </beans>
