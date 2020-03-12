@@ -7,9 +7,10 @@ import java.util.List;
 
 public interface StudentDao {
 
-    public void insertUser(Student user);
-    public void deleteUser(@Param("studentId") int id);
-    public void updateUser(Student user);
-    public Student queryOneUser(@Param("studentId") int id);
-    public List<Student> queryAllUser();
+    public void insertStudent(Student user);
+    public void deleteStudent(@Param("studentId") int id);
+    public void updateStudent(Student student);
+    public Student queryOneStudent(@Param("studentId") int id);
+    public List<Student> queryAllStudent();
+    public Student searchByName(@Param("name") String name);
 }

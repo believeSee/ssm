@@ -17,27 +17,32 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public void insertUser(Student user) {
-        studentDao.insertUser(user);
+    public void insertStudent(Student student) {
+        studentDao.insertStudent(student);
     }
 
     @Override
-    public void deleteUser(int id) {
-        studentDao.deleteUser(id);
+    public void deleteStudent(int id) {
+        studentDao.deleteStudent(id);
     }
 
     @Override
-    public void updateUser(Student user) {
-        studentDao.updateUser(user);
+    public void updateStudent(Student student) {
+        studentDao.updateStudent(student);
     }
 
     @Override
-    public Student queryOneUser(int id) {
-        return studentDao.queryOneUser(id);
+    public Student queryOneStudent(int id) {
+        return studentDao.queryOneStudent(id);
     }
 
     @Override
-    public List<Student> queryAllUser() {
-        return studentDao.queryAllUser();
+    public List<Student> queryAllStudent() {
+        return studentDao.queryAllStudent();
+    }
+
+    @Override
+    public Student searchByName(String name) {
+        return studentDao.searchByName(name);
     }
 }
